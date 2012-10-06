@@ -1,0 +1,428 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+		<link rel="stylesheet" href="revealjs/css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="revealjs/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Government.js</h1>
+					<h3>Building the JavaScript Party</h3>
+					<h6 class="subtitle">Don't worry, this talk isn't really about politics</h6>
+					<p class="subtitle"><a href="http://twitter.com/maxogden">@maxogden</a>, jsconfeu 2012</p>
+				</section>
+				
+				<section>
+					<img src="images/menino.jpeg">
+					<p class="subtitle"><a href="http://twitter.com/codeforamerica">@codeforamerica</a> with Boston Mayor Tommy Menino</p>
+				</section>
+				
+				<section>
+					<img src="images/urban-mechanics.jpeg">
+					<p class="subtitle">Governing Magazine</p>
+				</section>
+				
+				<section>
+					<h1>Strategy 1:</h1>
+					<h2>Fixing government from the inside</h2>
+				</section>
+				
+				<section>
+  				<section>
+    				<img src="images/cfa-github.png">
+    				<p><a href="http://github.com/codeforamerica">http://github.com/codeforamerica</a></p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/allopen-allthetime.png">
+  				</section>
+  				  				
+  				<section>
+    				<img src="images/projects/routeview.png">
+    				<img src="images/projects/routeview-cams.png">
+    				<p>
+    				  <a href="http://routeview.honolulu.gov/">routeview.honolulu.gov</a>
+    				</p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/blightstatus.png">
+    				<p>
+    				  <a href="http://blightstatus-dev.herokuapp.com">blightstatus-dev.herokuapp.com</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/hnlanswers.png">
+    				<p>
+    				  <a href="http://hnlanswers.herokuapp.com">hnlanswers.herokuapp.com</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/preparedly.png">
+    				<p>
+    				  <a href="http://prepared.ly">prepared.ly</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/neighborhow.png">
+    				<p>
+    				  <a href="http://neighborhow.org">neighborhow.org</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/localdata.png">
+    				<p>
+    				  <a href="http://golocaldata.com">golocaldata.com</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/textizen.png">
+    				<p>
+    				  <a href="http://textizen.com">textizen.com</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/discoverbps.png">
+    				<p>
+    				  <a href="http://discoverbps.org">discoverbps.org</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/schoolbus.png">
+    				<p>
+    				  <a href="http://schoolbus.bostonpublicschools.org">schoolbus.bostonpublicschools.org</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/mta-transit-mapbox.png">
+    				<p>
+    				  <a href="http://tiles.mapbox.com/jllord/map/mta">tiles.mapbox.com/jllord/map/mta</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/mta-map.png">
+    				<p>
+    				  <a href="http://mta-mac.com/map.html">mta-mac.com/map.html</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/seepennywork.png">
+    				<p>
+    				  <a href="http://seepennywork.in">seepennywork.in</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/seepennywork-2.png">
+    				<p>
+    				  <a href="http://seepennywork.in">seepennywork.in</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/splost.png">
+    				<p>
+    				  <a href="http://splost.codeforamerica.org">splost.codeforamerica.org</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/adopt-a-siren.png">
+    				<p>
+    				  <a href="http://sirens.honolulu.gov">sirens.honolulu.gov</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/seeclickfix.png">
+    				<p>
+    				  <a href="http://seeclickfix.com">seeclickfix.com</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/open311status.png">
+    				<p>
+    				  <a href="http://open311status.herokuapp.com">open311status.herokuapp.com</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/projects/messagemacon.png">
+    				<p>
+    				  <a href="http://messagemacon.com">messagemacon.com</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/supermayor.png">
+    				<p>
+    				  <a href="http://super-mayor.herokuapp.com">super-mayor.herokuapp.com</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/open311labs.png">
+    				<p>
+    				  <a href="http://311labs.org">311labs.org</a>
+            </p>
+  				</section>
+				</section>
+				
+				<section>
+					<h1>Strategy 2:</h1>
+					<h2>Fixing government from the outside</h2>
+				</section>
+				
+				<section>
+  				<section>
+    				<img src="images/projects/stadtlandcode.png">
+    				<p><a href="http://stadtlandcode.de">stadtlandcode.de</a></p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/wheelmap.png">
+    				<p>
+    				  <a href="http://wheelmap.org">wheelmap.org</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/pfandgeben.png">
+    				<p>
+    				  <a href="http://pfandgeben.de">pfandgeben.de</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/fragdenstaat.png">
+    				<p>
+    				  <a href="http://fragdenstaat.de">fragdenstaat.de</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/projects/fixmystreet.png">
+    				<p>
+    				  <a href="http://fixmystreet.com">fixmystreet.com</a>
+            </p>
+  				</section>
+  				
+  				<section>
+    				<img src="images/bundesgit-content.png">
+    				<p>
+    				  <a href="https://twitter.com/bundesgit">@bundesgit</a>
+            </p>
+  				</section>
+
+  				<section>
+    				<img src="images/bundesgit-diff.png">
+    				<p>
+    				  <a href="https://twitter.com/bundesgit">@bundesgit</a>
+            </p>
+  				</section>
+				</section>
+				
+				<section>
+					<h1>
+					  Strategy 3: Government as a Platform
+					</h1>
+					<a href="http://ofps.oreilly.com/titles/9780596804350/">(read this essay)</a>
+				</section>
+				
+				<section>
+          <h1 class="subtitle"><q>civic startup</q></h1>
+				</section>
+				
+				<section>
+  				<img src="images/projects/recollect.png">
+  				<p>
+  				  <a href="http://recollect.net">recollect.net</a>
+          </p>
+				</section>
+				
+				<section>
+          <a href="http://techcrunch.com/2012/06/02/how-to-cash-in-on-government-as-a-platform/"><img src="images/old-comp.png"></a>
+          <p>
+  				  sadly this is a recent photo
+          </p>
+				</section>
+
+				<section>
+  				<h1>how to hack this system?</h1>
+  				<h3>low cost procurement</h3>
+  				<h3>no need for a competitive bidding process</h3>
+				</section>
+				
+				<section>
+  				<h1>lets get idealistic</h1>
+  				<h3>oauth provider</h3>
+  				<h3>just as easy as twitter/instagram/foursquare</h3>
+				</section>
+				
+				<section>
+  				<h3>Heroku Add-ons for Government!?</h3>
+  				<img src="images/addons-home.png">
+				</section>
+				
+				<section>
+  				<h3>Heroku Add-ons for Government!?</h3>
+  				<img src="images/addons-detail.png">
+				</section>
+				
+				<section>
+  				<h3>case study</h3>
+          <h1>Estonia</h1>
+				</section>
+				
+				<section>
+  				<img src="images/focas12.png">
+  				<p>#focas12</p>
+				</section>
+				
+				<section>
+  				<h3>"ribs and spine" identity service</h3>
+  				<a href="http://e-estonia.com/"><img src="images/xroad.png"></a>
+				</section>
+
+				<section>
+  				<h2><q>the Estonian government didn't create programming resources – it acted as a smart purchaser</q></h2>
+				</section>
+				
+				<section>
+  				<p><h1>Governments !== software companies</h1></p>
+				</section>
+				
+				<section>
+          <img src="images/tallinn.png">
+  				<h3>Estonia is small, like a medium sized city</h3>
+				</section>
+				
+				<section>
+  				<h2>Who will advocate for good software?</h2>
+  				<h2>I thought bureaucrats were <b>evil</b>!?</h2>
+				</section>
+				
+				<section>
+  				<img src="images/mchammer-synchronouscity.jpg">
+  				<p>MC HAMMER, YA'LL. THAT'S WHO</p>
+				</section>
+				
+				<section>
+  				<p>Government will always change slowly.</p>
+  				<p>&nbsp;</p>
+  				<p><h1>but!</h1></p>
+  				<p>Government technology is changing the least-slowly!</p>
+				</section>
+
+				<section>
+  				<p>JS has the fastest growing community</p>
+          <img src="images/npm.png">
+				</section>
+				
+				<section>
+  				<p>So we can't change <span class="subtitle">all</span> governments overnight...</p>
+				</section>
+				
+				<section>
+				  <h1>However!</h1>
+  				<p>We can define a platform for fixing government.</p>
+  				<p>&nbsp;</p>
+  				<p class="subtitle">And there are cities interested in this!</p>
+				</section>
+				
+				<section>
+  				<p>Find a bug your government and build a product to fix it.</p>
+  				<p>&nbsp;</p>
+  				<p>This is what a JavaScript <q>political</q> party would look like: a group of people creating beautiful solutions inside of an ugly system.</p>
+				</section>
+				
+				<section>
+				  <img src="images/aristotle.jpg">
+  				<h1 class="subtitle">thanks!</h1>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				theme: Reveal.getQueryHash().theme || 'serif', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'revealjs/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'revealjs/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>
