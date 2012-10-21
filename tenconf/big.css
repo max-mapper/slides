@@ -1,5 +1,5 @@
 body {
-  font-family: 'CentSchBook Mono BT';
+  font-family: 'Helvetica';
   letter-spacing:-5px;
   background:#000;
   background-size:100%;
@@ -7,11 +7,10 @@ body {
   margin:0;
   padding:0;
   font-weight:bold;
-  text-shadow: -3px -3px 0 #383D3D, 3px -3px 0 #383D3D, -3px 3px 0 #383D3D, 3px 3px 0 #383D3D;
 }
 
 h1, h2, h3, p {
-  margin:0;  
+  margin:0;
 }
 
 em, a {

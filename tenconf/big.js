@@ -12,6 +12,7 @@ window.onload = function() {
             e.firstChild.style.display = 'none';
         } else {
             document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
         }
         while (
             e.offsetWidth > window.innerWidth ||
@@ -19,6 +20,7 @@ window.onload = function() {
             e.style.fontSize = (i -= 10) + 'px';
             if (i < 0) break;
         }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
         if (window.location.hash !== n) window.location.hash = n;
         document.title = e.textContent || e.innerText;
     }
