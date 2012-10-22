@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install', 'tpad' ]
+2 info using npm@1.1.62
+3 info using node@v0.8.11
+4 verbose read json /Users/maxogden/src/slides/empirejs/package.json
+5 warn package.json empirejs@0.0.1 No README.md file found!
+6 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/ansi/package.json
+7 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/async/package.json
+8 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/chip.avr.lufacdc/package.json
+9 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/color/package.json
+10 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/glob/package.json
+11 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/hook.io/package.json
+12 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/optimist/package.json
+13 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/request/package.json
+14 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/semver/package.json
+15 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/serialport/package.json
+16 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/socket.io/package.json
+17 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/stream-stats/package.json
+18 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/tpad/package.json
+19 verbose read json /Users/maxogden/src/slides/empirejs/node_modules/underscore/package.json
+20 warn package.json stream-stats@0.0.1 No README.md file found!
+21 verbose from cache /Users/maxogden/src/slides/empirejs/package.json
+22 verbose readDependencies using package.json deps
+23 verbose cache add [ 'tpad', null ]
+24 silly cache add name=undefined spec="tpad" args=["tpad",null]
+25 verbose parsed url { pathname: 'tpad', path: 'tpad', href: 'tpad' }
+26 silly lockFile fc90aed0-tpad tpad
+27 verbose lock tpad /Users/maxogden/.npm/fc90aed0-tpad.lock
+28 silly lockFile fc90aed0-tpad tpad
+29 verbose addNamed [ 'tpad', '' ]
+30 verbose addNamed [ null, '' ]
+31 silly lockFile 7afcd473-tpad tpad@
+32 verbose lock tpad@ /Users/maxogden/.npm/7afcd473-tpad.lock
+33 silly addNameRange { name: 'tpad', range: '', hasData: false }
+34 verbose url raw tpad
+35 verbose url resolving [ 'https://registry.npmjs.org/', './tpad' ]
+36 verbose url resolved https://registry.npmjs.org/tpad
+37 info trying registry request attempt 1 at 16:14:23
+38 http GET https://registry.npmjs.org/tpad
+39 info retry will retry, error on last attempt: Error: connect ECONNREFUSED
+40 info trying registry request attempt 2 at 16:14:34
+41 http GET https://registry.npmjs.org/tpad
+42 info retry will retry, error on last attempt: Error: connect ECONNREFUSED
+43 info trying registry request attempt 3 at 16:15:34
+44 http GET https://registry.npmjs.org/tpad
+45 silly lockFile 7afcd473-tpad tpad@
+46 error Error: connect ECONNREFUSED
+46 error     at errnoException (net.js:769:11)
+46 error     at Object.afterConnect [as oncomplete] (net.js:760:19)
+46 error  { [Error: connect ECONNREFUSED]
+46 error   code: 'ECONNREFUSED',
+46 error   errno: 'ECONNREFUSED',
+46 error   syscall: 'connect' }
+47 error If you are behind a proxy, please make sure that the
+47 error 'proxy' config is set properly.  See: 'npm help config'
+48 error System Darwin 11.4.0
+49 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "tpad"
+50 error cwd /Users/maxogden/src/slides/empirejs
+51 error node -v v0.8.11
+52 error npm -v 1.1.62
+53 error syscall connect
+54 error code ECONNREFUSED
+55 error errno ECONNREFUSED
+56 error stack Error: connect ECONNREFUSED
+56 error stack     at errnoException (net.js:769:11)
+56 error stack     at Object.afterConnect [as oncomplete] (net.js:760:19)
+57 verbose exit [ 1, true ]

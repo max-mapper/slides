@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title></title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/jquery-1.7.2.min.js"></script>
+  <script src="/js/d3.v2.js"></script>
+  <script src="/js/jquery.knob.js"></script>
+  <script src="/js/visualize.js"></script>
+
+  <style>
+    body {
+      margin:0;
+      padding: 0;
+      background: black;
+    }
+
+    .baseline {
+      color: #FF851D;
+      font-family: Helvetica;
+      text-align: center;
+    }
+
+    .button {
+      float: left;
+      margin:0;
+      width: 150;
+      height: 150px;
+      border: 1px solid #000;
+    }
+
+    .button input {
+      font-size: 15px !important;
+      margin-left: -150px !important;
+      margin-top: 57px !important;
+    }
+
+    .buttonContainer {
+      margin:50 auto;
+
+      padding: 0;
+      border: 1px solid #444;
+      width: 608px;
+      height: 608px;
+    }
+
+    path {
+      stroke: #914B10;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .graph {
+      margin-top: -70px;
+      margin-left: 25px;
+      width:100px;
+      height:30px;
+    }
+
+    .hide { display :none; }
+
+
+  </style>
+  <body>
+    <div class="buttonContainer">
+      <div class="button template hide">
+        <input type="text" class="dial" data-fgColor="#FF851D" data-bgColor="#000"  data-thickness=".05  " data-readonly="true" data-width="150" value="500" data-max="18000">
+        <div class="graph"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
