@@ -1,0 +1,32 @@
+// before
+  FileReader
+    readAsBinaryString
+    onprogress
+    loaded
+    total
+    target
+    target.result
+
+  XMLHttpRequest
+    open
+    responseText
+    send
+    onreadystatechange
+
+  getUserMedia
+    src
+    webkitURL.createObjectURL
+    getContext('2d').drawImage
+    toDataURL
+    createElement
+    appendChild
+    querySelector
+
+  web workers
+    postMessage
+    onmessage
+    event.data
+
+// after
+  on
+  data

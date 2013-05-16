@@ -1,0 +1,20 @@
+- streams are useful for writing javascript programs
+- node newbs think they need flow control
+- streams are flow control
+- JIFASNIF
+- thusly, domnode
+- evented io is everywhere in the browser
+
+  AJAX
+  web sockets
+  files
+  web workers
+  webcam
+  microphone
+  geolocation.watchPosition
+  indexedDB
+  the human finger (touch/mouse)
+  setInterval
+  web audio
+  
+  
