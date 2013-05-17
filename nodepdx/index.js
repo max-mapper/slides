@@ -11,7 +11,9 @@ var urls = {
   "node": "https://github.com/maxogden/art-of-node#the-art-of-node",
   "browserify": "http://browserify.org/",
   "beefy": "http://didact.us/beefy",
-  "gifblocks": "http://gifblocks.com"
+  "gifblocks": "http://gifblocks.com",
+  "drone": "http://shama.github.io/voxel-drone/",
+  "craft": "http://shama.github.io/craft/"
 }
 
 var slides = Object.keys(urls)
