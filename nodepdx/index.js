@@ -38,8 +38,12 @@ slides.map(function(slide) {
 })
 
 game.on('setBlock', function(pos, val, old) {
+  if (old === 1 || val === 1) return
   var url = urls[slides[old - 2]]
   var win = window.open(url)
 })
+
+game.interact.on('release', function() { game.paused = true })
+game.interact.on('attain', function() { game.paused = false })
 
 window.game = game
