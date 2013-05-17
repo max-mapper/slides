@@ -13,7 +13,13 @@ var urls = {
   "beefy": "http://didact.us/beefy",
   "gifblocks": "http://gifblocks.com",
   "drone": "http://shama.github.io/voxel-drone/",
-  "craft": "http://shama.github.io/craft/"
+  "craft": "http://shama.github.io/craft/",
+  "skin": "http://maxogden.github.io/minecraft-skin/",
+  "archiveroom": "http://archiveroom.net/",
+  "nyc": "https://twitter.com/voxeljs/status/324253185868963840",
+  "floodfill": "http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=22924",
+  "archiveroom": "http://archiveroom.net/",
+  "archiveroom": "http://archiveroom.net/",
 }
 
 var slides = Object.keys(urls)
