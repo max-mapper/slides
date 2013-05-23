@@ -1,0 +1,12 @@
+{
+  "name": "webrebels",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "start": "beefy index.js:bundle.js 9967 --debug=false -- --fast --noparse=three"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}
