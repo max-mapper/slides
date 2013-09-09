@@ -4,22 +4,24 @@ use &harr; to navigate
 ![backgrounds](f5pif.jpg "background")
 ####[Working with binary + multidimensional data (in js)](#)
 
+# q: what makes node fast
+
+#![types](nodeconftalk-03.png "inline")
+
 #![types](nodeconftalk-02.png "inline")
-# Strings, Objects, Arrays, Numbers, etc
-- allocated inside the v8 heap
+# Strings, Objects, Arrays, Numbers
 - no way to store raw binary data, must convert
 - benefit: simple, dynamic
+- part of the v8 heap
 
 # Buffers, Typed Arrays, ArrayBuffers
 - raw binary data! don't be afraid
 - slower to initialize
 - super fast read/write
-- in node: buffers allocated outside of the v8 heap
-
-#![types](nodeconftalk-03.png "inline")
+- can use all yer RAM
 
 # Buffers vs Typed Arrays
-- both introduced around the same time (2010)
+- both introduced around the same time (~2010)
 - Typed Arrays are zeroed on init (security)
 - Typed Arrays are a view on an ArrayBuffer
 - Buffers have write/read functions for different views
@@ -30,25 +32,37 @@ use &harr; to navigate
 - but, usually easier to work with if JSON-y
 - `split` vs `binary-split`
 
-# bops
-- **b**uffer **op**eration**s**
-- `x = new Uint8Array(1), x = new Buffer(1)`
-- Buffer doesn't exist in browser, has different semantics
-- `bops.writeUInt8(x, 1, 0)` // works the same in node and browser
-- [readme](https://npmjs.org/package/bops#readme)
+# Binary in browsers
+- websockets
+- xhr
+- filereader
+- web audio
+- webrtc (soon)
 
-# ndarray
+# Binary in node
+- tcp/http
+- fs
+- crypto
+- most I/O
+
+# [bops](https://npmjs.org/package/bops#readme)
+- **b**uffer **op**eration**s**
+- `x = new Uint8Array(1)`
+- `x = new Buffer(1)`
+- `bops.writeUInt8(x, 1, 0)`
+
+# [ndarray](https://npmjs.org/package/ndarray#readme)
 - implemented on top of Typed Arrays
-- `[[1, 2], [1, 2], [1, 2]]`
-- `require('ndarray')`
-- `ndarray(new Uint8Array([1, 2, 1, 2, 1, 2]), [2, 2, 2])`
-- [readme](https://npmjs.org/package/ndarray#readme)
+- slow: [[1, 2], [1, 2], [1, 2]]
+- require('ndarray')
+- ndarray(
+    new Uint8Array([1, 2, 1, 2, 1, 2]), [2, 2, 2]
+  )
 
 # ndarray demos
 - [ndarray-stl](http://maxogden.github.io/ndarray-stl/?png=http://i.imgur.com/ccBkMVY.png)
 - [stl-obj-viewer](http://maxogden.github.io/stl-obj-viewer/)
 - [ndarray-continuous](http://hughsk.github.io/ludum-dare-27/)
-- sox song.mp3 -c1 -r44k -t f32 - | sillyscope --range=100-20k
 
 # Streams
 - I/O is slow, CPU is fast
@@ -57,18 +71,20 @@ use &harr; to navigate
 
 #![backgrounds](k0t1e.png "background")
 
-# Example: ungzipping
-- `request('9-billion-gb.gz').pipe(zlib.createGunzip())`
+# Example
+- request('9-billion-gb.gz').pipe(zlib.createGunzip())
 - all streams in node core emit Buffers
-- zlib encodes/decodes Buffers, and is a streaming protocol
+- zlib encodes/decodes Buffers, and is streaming
 
 # npm search protips
+- READ THE CODE! prefer small modules
 - CLI version (slow but thorough)
-- [npmsearch.com](http://npmsearch.com)
-- relevant prefixes:
+- build some better search/curation tools!!!!
+- relevant (to this talk) prefixes:
   - `level-`, `ndarray-`, `-stream`
 
 # [dat](https://github.com/maxogden/dat)
+- work in progress: github.com/maxogden/dat
 - based on leveldb + node
 - version control for data
 - modules for different formats/APIs/DBs
@@ -76,6 +92,9 @@ use &harr; to navigate
 
 # ![d](nodeconftalk-01.png "inline")
 - `curl http://stat-computing.org/dataexpo/2009/2007.csv.bz2 | bzip2 -d | ldjson-csv | dat`
+
+# substack ftw
+- sox song.mp3 -c1 -r44k -t f32 - | sillyscope --range=100-20k
 
 # thanks! i'm @maxogden
 
