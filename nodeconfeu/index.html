@@ -1,0 +1,86 @@
+<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link href='big.css' rel='stylesheet' type='text/css' /><script src='big.js'></script><script src='showdown.js'></script></head><body>
+use &harr; to navigate
+
+![backgrounds](f5pif.jpg "background")
+####[Working with binary + multidimensional data (in js)](#)
+
+#![types](nodeconftalk-02.png "inline")
+# Strings, Objects, Arrays, Numbers, etc
+- allocated inside the v8 heap
+- no way to store raw binary data, must convert
+- benefit: simple, dynamic
+
+# Buffers, Typed Arrays, ArrayBuffers
+- raw binary data! don't be afraid
+- slower to initialize
+- super fast read/write
+- in node: buffers allocated outside of the v8 heap
+
+#![types](nodeconftalk-03.png "inline")
+
+# Buffers vs Typed Arrays
+- both introduced around the same time (2010)
+- Typed Arrays are zeroed on init (security)
+- Typed Arrays are a view on an ArrayBuffer
+- Buffers have write/read functions for different views
+
+# Converting between Buffers and JS objects
+- utf8 decoding could be expensive
+- always faster to keep data in Buffers
+- but, usually easier to work with if JSON-y
+- `split` vs `binary-split`
+
+# bops
+- **b**uffer **op**eration**s**
+- `x = new Uint8Array(1), x = new Buffer(1)`
+- Buffer doesn't exist in browser, has different semantics
+- `bops.writeUInt8(x, 1, 0)` // works the same in node and browser
+- [readme](https://npmjs.org/package/bops#readme)
+
+# ndarray
+- implemented on top of Typed Arrays
+- `[[1, 2], [1, 2], [1, 2]]`
+- `require('ndarray')`
+- `ndarray(new Uint8Array([1, 2, 1, 2, 1, 2]), [2, 2, 2])`
+- [readme](https://npmjs.org/package/ndarray#readme)
+
+# ndarray demos
+- [ndarray-stl](http://maxogden.github.io/ndarray-stl/?png=http://i.imgur.com/ccBkMVY.png)
+- [stl-obj-viewer](http://maxogden.github.io/stl-obj-viewer/)
+- [ndarray-continuous](http://hughsk.github.io/ludum-dare-27/)
+- sox song.mp3 -c1 -r44k -t f32 - | sillyscope --range=100-20k
+
+# Streams
+- I/O is slow, CPU is fast
+- Don't wait for the whole thing to download
+- Get Buffers as soon as the data arrives
+
+#![backgrounds](k0t1e.png "background")
+
+# Example: ungzipping
+- `request('9-billion-gb.gz').pipe(zlib.createGunzip())`
+- all streams in node core emit Buffers
+- zlib encodes/decodes Buffers, and is a streaming protocol
+
+# npm search protips
+- CLI version (slow but thorough)
+- [npmsearch.com](http://npmsearch.com)
+- relevant prefixes:
+  - `level-`, `ndarray-`, `-stream`
+
+# [dat](https://github.com/maxogden/dat)
+- based on leveldb + node
+- version control for data
+- modules for different formats/APIs/DBs
+- major goals: huge datasets, fast sync + update
+
+# ![d](nodeconftalk-01.png "inline")
+- `curl http://stat-computing.org/dataexpo/2009/2007.csv.bz2 | bzip2 -d | ldjson-csv | dat`
+
+# thanks! i'm @maxogden
+
+</body>
+<footer>
+<script>var converter = new Showdown.converter(); var slides = document.body.innerHTML.split("\n\n"); document.body.innerHTML = ""; for ( var i=0; i<slides.length-1; i++) { console.log(i); document.body.innerHTML += "<div>" + converter.makeHtml(slides[i]) + "</div>"; }</script>
+</footer>
+</html>
