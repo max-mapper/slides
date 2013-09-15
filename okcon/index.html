@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link href='big.css' rel='stylesheet' type='text/css' /><script src='big.js'></script><script src='showdown.js'></script></head><body>
+use &harr; to navigate
+
+![logoooo](dat-hex.png "inline")
+
+# consuming and publishing data should be easy
+
+# non-automated workflows
+- ftp/bulk downloads
+- REST APIs
+- scraping
+- writing data import scripts
+
+# goals of dat
+- de-facto tabular data "format"
+- automated data install/sync
+- eliminate glue code
+- building block for more complex logic
+- be fast!
+
+# outside the scope
+- diffing/merging
+- complex queries
+- end-user applications
+- these can be built on top of dat
+
+# small pieces loosely joined
+
+![types](npm.png "inline")
+
+![types](voxel-hello-world.png "inline")
+
+# Use cases
+- scientific/research data
+- "big data" sets
+- streaming/realtime data
+
+# Initial goals
+- Beta testers
+- Make it fast
+- Populate the ecosystem with modules
+
+# Background
+- 6 months of grant funding for a prototype
+- 100% open source
+- github.com/maxogden/dat
+
+# Ways to contribute
+- developer preview is available now
+- #dat on freenode IRC
+- Browse Github Issues
+- Comment, leave a use case
+- github.com/maxogden/dat/issues
+
+## add a large file
+<code><pre>
+git add, commit: 13m40s
+dat: 11m10s
+</pre></code>
+
+## adding one line
+<code><pre>
+git add, commit: 8m30s
+dat: 5ms
+</pre></code>
+
+# thanks! i'm @maxogden
+
+</body>
+<footer>
+<script>var converter = new Showdown.converter(); var slides = document.body.innerHTML.split("\n\n"); document.body.innerHTML = ""; for ( var i=0; i<slides.length-1; i++) { console.log(i); document.body.innerHTML += "<div>" + converter.makeHtml(slides[i]) + "</div>"; }</script>
+</footer>
+</html>
