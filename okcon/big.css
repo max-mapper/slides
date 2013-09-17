@@ -1,5 +1,6 @@
+
 body {
-  font-family: Helvetica Neue;
+  font-family: Open Sans, Helvetica Neue;
 	background: #fefefe;
 	background-size: 100%;
 	color: #333;
@@ -13,7 +14,6 @@ body {
 h4 { position: relative; top: -200px; }
 
 h1, h2, h3, h4, h5, h6, h7, p {
-	font-family: "Amatic SC";
 	font-size: 200%;
 	font-weight: inherit;
 	margin: 0;
@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6, h7, p {
 }
 
 /* Red */ h1 {
-	color: #f65211;
+	color: #31b44e;
 }
 
 /* Orange */ h2 {
@@ -52,9 +52,11 @@ h1, h2, h3, h4, h5, h6, h7, p {
 	color: #0d0d0d;
 }
 
+pre { text-align: left !important; }
+
 a {
 	font-style: normal;
-	background: #f05422;
+	background: #31b44e;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 5px;
