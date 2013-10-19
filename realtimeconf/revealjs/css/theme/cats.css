@@ -1,0 +1,191 @@
+/**
+ * A simple theme for reveal.js presentations, similar 
+ * to the default theme. The accent color is darkblue; 
+ * do a find-replace to change it.
+ * 
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se; so is the theme - beige.css - that this is based off of.
+ */
+
+/*********************************************
+ * FONT-FACE DEFINITIONS
+ *********************************************/
+
+@font-face {
+  font-family: 'CenturySchoolBookMono', monospace;
+  src: url(yanone.eot);
+  src: local('CenturySchoolBookMono'), 
+          url(centuryschoolbookmono.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Amatic';
+  src: url('../../../../fonts/AmaticSC-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amatic';
+  src: url('../../../../fonts/AmaticSC-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("../../../../fonts/SourceSansPro-Light.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("../../../../fonts/SourceSansPro-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("../../../../fonts/SourceSansPro-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+
+body {
+  font-family: CenturySchoolBookMono, monospace;
+  font-weight: 100;
+  color: #666;
+	font-size: 36px;
+	letter-spacing: -0.02em;
+  background-color: #fff;
+}
+
+::-moz-selection {
+  background: #26351C;
+  color: rgba(255,255,255, 0.8);
+}
+::-webkit-selection {
+  background: #26351C;
+  color: rgba(255,255,255, 0.8);
+}
+::selection {
+  background: #26351C;
+  color: rgba(255,255,255, 0.8);
+}
+
+section.dark * { color: white !important; }
+.reveal blockquote { box-shadow: none; }
+.reveal .smalltext { font-size: 15px; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+
+.reveal h1, 
+.reveal h2, 
+.reveal h3, 
+.reveal h4, 
+.reveal h5, 
+.reveal h6 {
+	margin: 0 0 40px 0;
+	color: #666;
+	line-height: 1em;	
+}
+
+.reveal h1 {
+  font-family: "Amatic";
+  color: #464646;
+  line-height: .8em;
+  letter-spacing: -.045em;
+  font-weight: 600;
+}
+
+.reveal h2 {
+  font-family: "Amatic";
+  color: #464646;
+  line-height: 1em;
+  letter-spacing: -.045em;
+  font-weight: 600;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+
+.reveal a:not(.image) {
+	color: #51483D;
+	text-decoration: none;
+  font-weight: bold;
+  line-height: 1.4em;
+	-webkit-transition: color .15s ease;
+	   -moz-transition: color .15s ease;
+	    -ms-transition: color .15s ease;
+	     -o-transition: color .15s ease;
+	        transition: color .15s ease;
+}
+	.reveal a:not(.image):hover {
+		text-shadow: none;
+		border: none;
+		border-radius: 2px;
+	}
+
+.reveal .roll span:after {
+	color: #fff;
+	background: #51483D;
+}
+
+/*********************************************
+ * MISC
+ *********************************************/
+
+.reveal p {
+  line-height: 1.4em;
+  font-size: 1.15em;
+  color: #111;
+}
+
+.reveal .subtitle {
+  font-style: italic;
+}
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+
+.reveal .controls a {
+	color: black;
+}
+	.reveal .controls a.enabled {
+		color: #26351C;
+		opacity: 1;
+		text-shadow: 0px 0px 2px hsla(185, 45%, 70%, 0.3);
+	}
+
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+
+.reveal .progress {
+	background: rgba(0,0,0,0.2);
+}
+	.reveal .progress span {
+		background: #26351C;
+
+		-webkit-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		   -moz-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		    -ms-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		     -o-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		        transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	}
+
+
