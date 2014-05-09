@@ -20,9 +20,8 @@ em, a {
 }
 
 a {
-  background: #34d0e7;
   color:#000;
-  text-decoration:none;
+  text-decoration:underline;
 }
 
 img {
@@ -78,7 +77,10 @@ window.onload = function() {
         if (window.location.hash !== n) window.location.hash = n;
         document.title = e.textContent || e.innerText;
     }
-    document.onclick = function() { go(++cur % (s.length)); };
+    document.onclick = function(e) {
+      if (e.target.tagName === 'A') return
+      go(++cur % (s.length));
+    };
     function fwd() { go(Math.min(s.length - 1, ++cur)); }
     function rev() { go(Math.max(0, --cur)); }
     document.onkeydown = function(e) {
@@ -128,18 +130,20 @@ window.onload = function() {
 <div><img src="Anyone_Can_Cook.png"></div>
 <div>everyone can write at least one module</div>
 <div>small modules: <i>"natural abstractions"</i> that you can compose into bigger modules</div>
+<div>proper modules minimize vendor lock-in</div>
 <div><img src="levelup.png"></div>
 <div><img src="ci.png"></div>
 <div><img src="buffer.png"></div>
-<div>fun stuff: beefy, watchify, tape, testlingify, level-filesystem</div>
+<div>fun stuff: <a href="http://npmsj.org/beefy">beefy</a>, <a href="http://npmsj.org/watchify">watchify</a>, <a href="http://npmsj.org/tape">tape</a>, <a href="http://npmsj.org/testlingify">testlingify</a>, <a href="http://npmsj.org/level-filesystem">level-filesystem</a></div>
 <div>"step 1 to use my client side library: install node.js"</div>
 <div>
-  http://cdnjs.com, http://wzrd.in, http://jspm.io, http://jsdelivr.com, https://normalize.github.io
+  <a href="http://cdnjs.com">cdnjs.com</a>, <a href="http://wzrd.in">wzrd.in</a>, <a href="http://jspm.io">jspm.io</a>, <a href="http://jsdelivr.com">jsdelivr.com</a>, <a href="http://normalize.github.io">normalize.github.io</a>
 </div>
 <div>
   <img src="requirebin.png">
 </div>
-<div>
-  susbtack/brfs, petehunt/js-css-loader, conradz/rework-npm, atomify/atomify-css
+<div>CSS/asset module experiments:
+  <a href="http://github.com/substack/brfs">brfs</a>, <a href="http://github.com/petehunt/js-css-loader">js-css-loader</a>, <a href="http://github.com/conradz/rework-npm">rework-npm</a>, <a href="http://github.com/atomify/atomify-css">atomify-css</a>
 </div>
-<div>github.com/maxogden/slides</div>
+<div>a few examples of good small module authors: substack, mikolalysenko, hughsk, raynos, mafintosh, damonoehlman, tmcw, rvagg, juliangruber, feross</div>
+<div>jquęry<br><span style="font-size: 40px">slides: <a href="http://github.com/maxogden/slides">github.com/maxogden/slides</a></span></div>
