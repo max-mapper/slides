@@ -1,0 +1,159 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+<style type='text/css'>
+body {
+  font-family: 'Droid Serif';
+  letter-spacing:-2px;
+  background:#fff;
+  background-size:100%;
+  color:#000;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  color:#000;
+  text-decoration:underline;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:110%;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+</style>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0, ti;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n], t;
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            document.body.style.backgroundRepeat = 'no-repeat';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        t = parseInt(e.getAttribute('time-to-next') || 0, 10);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 2) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function(e) {
+      if (e.target.tagName === 'A') return
+      go(++cur % (s.length));
+    };
+    function fwd() { go(Math.min(s.length - 1, ++cur)); }
+    function rev() { go(Math.max(0, --cur)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39) fwd();
+        if (e.which === 37) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div><img src="logo.png"></div>
+<div>dat nodeschool</div>
+<div><img src="lebron-small.gif"><iframe style="position: relative; top: " width="560" height="60" src="//www.youtube.com/embed/a76nxECYfo4?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div>lebron is the world's best basketball player and the best set of technologies for combining modules into applications with javascript</div>
+<div>supports mvc, mvm, mvvm, cmv, mccmvm, cvvmqp, csv, html, html5, enterpise, 0mq, b2b</div>
+<div>ok but srsly</div>
+<div><img src="browserify.png"></div>
+<div><img src="venn.png"></div>
+<div>
+  <ul>elements of a good module</ul>
+    <li>does one thing and does it well</li>
+    <li>isn't a grab bag (is designed to be a dependent)</li>
+    <li>passing CI for browsers and linux/mac/windows</li>
+    <li>no complicated steps to install and use</li>
+    <li>clear, concise readme</li>
+  </ul>
+</div>
+<div>everyone can write at least one module</div>
+<div>small modules: <i>"natural abstractions"</i> that you can compose into bigger modules</div>
+<div>proper modules minimize vendor lock-in</div>
+<div><img src="lebron-dunk-2-small.gif"></div>
+<div><img src="levelup.png"></div>
+<div><img src="ci.png"></div>
+<div><img src="buffer.png"></div>
+<div>fun stuff time</div>
+<div><a href="http://npmjs.org/nets">nets</a></div>
+<div><a href="http://npmjs.org/beefy">beefy</a></div>
+<div><a href="http://npmjs.org/watchify">watchify</a></div>
+<div><a href="http://npmjs.org/tape">tape</a></div>
+<div><a href="http://npmjs.org/testlingify">testlingify</a></div>
+<div><a href="http://npmjs.org/level-filesystem">level-filesystem</a></div>
+<div><a href="http://npmjs.org/mercury">mercury</a> and <a href="http://npmjs.org/http-framework">http-framework</a></div>
+<div>module servers:
+  <a href="http://cdnjs.com">cdnjs.com</a>, <a href="http://wzrd.in">wzrd.in</a>, <a href="http://jspm.io">jspm.io</a>, <a href="http://jsdelivr.com">jsdelivr.com</a>, <a href="http://normalize.github.io">normalize.github.io</a>
+</div>
+<div>
+  <a href="http://requirebin.com"><img src="requirebin.png"></a>
+</div>
+<div>help create a browserify search engine: <a href="https://gist.github.com/airportyh/56a0dcc0205661024d11">airportyh/56a0dcc0205661024d11</a> </div>
+<div>CSS/asset loaders:
+  <a href="http://github.com/substack/brfs">brfs</a>, <a href="http://github.com/petehunt/js-css-loader">js-css-loader</a>, <a href="http://github.com/conradz/rework-npm">rework-npm</a>, <a href="http://github.com/atomify/atomify-css">atomify-css</a>
+</div>
+<div><img src="lebron-team-small.gif"></div>
+<div>a few examples of good small module authors: <a href="http://npmjs.org/~substack">substack</a>, <a href="http://npmjs.org/~mikolalysenko">mikolalysenko</a>, <a href="http://npmjs.org/~hughsk">hughsk</a>, <a href="http://npmjs.org/~raynos">raynos</a>, <a href="http://npmjs.org/~mafintosh">mafintosh</a>, <a href="http://npmjs.org/~damonoehlman">damonoehlman</a>, <a href="http://npmjs.org/~tmcw">tmcw</a>, <a href="http://npmjs.org/~rvagg">rvagg</a>, <a href="http://npmjs.org/~juliangruber">juliangruber</a>, <a href="http://npmjs.org/~feross">feross</a></div>
+<div>that's all folks<br><span style="font-size: 40px">slides: <a href="http://github.com/maxogden/slides">github.com/maxogden/slides</a></span></div>
