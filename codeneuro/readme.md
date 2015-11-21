@@ -1,0 +1,11 @@
+- Open source!
+- Alfred P Sloan Foundation 'Data Tools' funding
+- #1 Goal is reproducibility
+- Collaboration
+- Pre-Git Era vs Post-Git Era
+- Sending a data "pull request"
+- Merge data contributions from others
+- Set up data import pipelines to wrap legacy data sources/formats
+- Update local copies of data with new changes
+- Revert back to old versions of data
+- Compare two versions of a dataset
