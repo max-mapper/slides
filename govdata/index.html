@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Serif'), local('PTSerif-Regular'), url(fonts/ptserif.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Serif Bold'), local('PTSerif-Bold'), url(fonts/ptserif-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: local('PT Serif Italic'), local('PTSerif-Italic'), url(fonts/ptserif-bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+section {
+  background-color: #fff;
+  color: #293648;
+  padding: 2em;
+  font-family: "PT Serif", Baskerville, Georgia;
+}
+
+section ul a:link {
+  text-decoration: underline;
+}
+
+#follow {
+  background-color: #fff;
+  color: #fff;
+}
+
+#follow a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.grey {
+  color: #777;
+}
+
+a:link,
+a:visited {
+  color: #394B5B;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<section style="text-align:center;padding-top:3em;">
+  <p style="font-size:120%;"><b>Data At Risk</b></p>
+  <p>Backing Up Research Data</p>
+  <p class="grey"><a href="https://twitter.com/denormalize">Maxwell Ogden</a>, March 2017<br><br><a href="https://codeforscience.org"><img src="codeforscience.png"></a><a href="https://datproject.org"><img src="datlogo.png"></a><a href="https://codeforamerica.org"><img style="padding-left: 4px" src="codeforamerica.png"></a>
+</section>
+
+<section id="follow" style="padding-top:5em;background:url(datarefuge.jpg);background-size:cover;">
+  <p id="follow-anchor" style="position:fixed;text-indent:-1.25em;">&rarr; Data Rescue Event at <a href="https://www.nytimes.com/2017/03/06/science/donald-trump-data-rescue-science.html?_r=1">NYU in February</a>
+</section>
+
+<section id="follow" style="padding-top:5em;background:url(dailyshow.png);background-size:cover;">
+  <p id="follow-anchor" style="position:fixed;text-indent:-1.25em;">&rarr; <a href="http://www.cc.com/video-clips/9n7n5i/the-daily-show-with-trevor-noah-canada-holds-on-to-u-s--climate-data-for-a-bit">Daily Show</a>
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(datarescuepdx.png);background-size:contain; background-repeat:no-repeat;background-color:#111525;background-position: center center;">
+  <p id="follow-anchor" style="position:fixed;text-indent:-1.25em;">&rarr; Portland, January</p>
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(ckan.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Why Rescue Data?</h3>
+    <ul>
+      <li><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0115253">Link Rot: 1 out of 5 HTTP links in top science journal articles breaks within 5 years</a></li>
+      <li><a href="http://longnow.org/seminars/02017/feb/01/fixing-government-bottom-and-outside/">Fixing government bottom up and outside in</a></li>
+      <li>Open science needs better data archiving tools</li>
+    </ul>
+</section>
+
+
+<section id="follow" style="padding-top:5em;background-image:url(datagov.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>How Data.gov Works</h3>
+    <ul>
+      <li>1. Agencies create metadata for their datasets</li>
+      <li>2. Publishes them at e.g. data.nasa.gov/data.json</li>
+      <li>3. Data.gov regularly harvests these</li>
+      <li>4. Data.gov provides metadata search/discovery</li>
+      <li>5. Agencies host data, not Data.gov</li>
+    </ul>
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(projectopendata.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Mission: Backup Data.gov</h3>
+    <p>We learned that a dedicated effort to back up Data.gov had never been done before.</p>
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Download Strategy</h3>
+    <ul>
+      <li>1. Extract all metadata from Data.gov API</li>
+      <li>2. Do initial HTTP GET on all resource URLs</li>
+      <li>3. Divide into 5 evenly sized groups of files</li>
+      <li>4. Download actual data files on 5 cloud machines in parallel</li>
+      <li>5. Store data and all metadata (HTTP headers, timestamps, hashes)</li>
+    </ul>
+</section>
+
+<section style="padding:2em 9em;">
+    <h3>Data.gov HTTP Status Codes</h3>
+    <img src="stats/Screen Shot 2017-02-16 at 8.16.32 PM.png">
+</section>
+
+<section style="padding:2em 9em;">
+    <h3>Data.gov HTTP Content-Types</h3>
+    <img src="stats/mimes.png">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(archivability.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:2em 9em;">
+    <h3>Data.gov Filesize Statistics (~40TB)</h3>
+    <img src="stats/filesizestats.png">
+</section>
+
+<section style="padding:2em 9em;">
+    <h3>Data.gov Domain Distribution</h3>
+    <img src="stats/domains.png">
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Archive Strategy</h3>
+    <ul>
+      <li>Store a copy on University of California system (CDL)</li>
+      <li>Store a copy at my house (gigabit upload)</li>
+      <li>Distribute over Dat (more on that later)</li>
+    </ul>
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(harddrives.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(dashboard.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(datacenter.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:2em;">
+    <h3>Feb 14: Trump Deletes Data</h3>
+    <p><a href="https://twitter.com/denormalize/status/831581871230193664"><img height="600px" src="tweet.png"></a></p>
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Data Grabbed To Date (March 2017)</h3>
+    <ul>
+      <li><a href="https://github.com/archiveteam/ftp-gov-grab">ArchiveTeam FTP-Gov Backup</a>: 120TB</li>
+      <li><a href="https://archive.org/details/EndOfTerm2016WebCrawls">Internet Archive End Of Term Crawls</a>: 75TB</li>
+      <li><a href="https://medium.com/@maxogden/project-svalbard-a-metadata-vault-for-research-data-7088239177ab">Data.gov</a>: 40TB</li>
+      <li><a href="https://datarefuge.org">DataRefuge</a>: 1TB</li>
+      <li><a href="https://bitbucket.org/azimuth-backup/azimuth-inventory/issues">Azimuth (UCR)</a>: ~40TB? (No public metadata)</li>
+      <li><a href="https://github.com/climate-mirror/datasets/issues">ClimateMirror (UCD)</a>: ? (No public metadata)</li>
+    </ul>
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Question: Where is NASA/NOAA metadata?</h3>
+    <p>Estimates range EOS alone is 20-60PB of data.</p>
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url(datagovvenn.png);background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Challenge: Download One NASA Dataset</h3>
+    <p>How hard could it be? We just want to grab metadata and data.</p>
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.16.33 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.18.05 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.18.33 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.19.48 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.22.35 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.22.43 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.23.00 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.23.08 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.23.21 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.23.51 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.24.15 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.24.56 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.25.23 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('nasa/Screen Shot 2017-03-15 at 3.25.49 PM.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:5em 9em;">
+    <h3>Data Refuge Future Goals</h3>
+    <ul>
+      <li>Get more data.json coverage at NASA/NOAA. Less HTML, more data (collaborative)</li>
+      <li>Establish network of research libraries mirroring/curating data (parallel)</li>
+      <li>Distribute data through a global volunteer censorship resistant peer to peer network (mad science)</li>
+    </ul>
+</section>
+
+<section style="padding:2em;">
+   <h3 style="padding: 0; margin: 0 0 0 50px;"><a style="color:black;" href="https://datproject.org">DatProject.org</a></h3>
+   <img height="100%" src="datproject.png">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('stats/hyperdrivestats.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('datmeta.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:2em;">
+   <h3 style="padding: 0; margin: 0 0 0 50px;"><a style="color:black;" href="https://beakerbrowser.com">Beaker Browser</a></h3>
+   <img height="100%" src="beaker.png">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('beakereop.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="padding:2em;">
+    <h3 style="padding: 0; margin: 0 0 0 50px;"><a style="color:black;" href="https://medium.com/@maxogden/have-fast-wi-fi-help-back-up-the-government-from-your-living-room-f0566d76b79d#.2k3qau7bz">Project Svalbard/DataSilo</a></h3>
+   <img height="100%" src="svalbard.jpeg">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('csv1.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section id="follow" style="padding-top:5em;background-image:url('csv2.png');background-size:contain; background-repeat:no-repeat;background-position: center center;">
+</section>
+
+<section style="text-align:center;padding-top:3em;">
+  <p style="font-size:120%;"><b>Thanks</b></p>
+  <p>@dat_project @denormalize</p>
+  <p><a href="https://github.com/maxogden/slides/govdata">github.com/maxogden/slides/govdata</a></p>
+  <p><a href="https://datproject.org">datproject.org</a></p>
+  <p class="grey"><a href="https://codeforscience.org"><img src="codeforscience.png"></a><a href="https://datproject.org"><img src="datlogo.png"></a><a href="https://codeforamerica.org"></a>
+</section>
+
+<script src="d3.v3.min.js"></script>
+<script src="stack.v1.min.js"></script>
+<script>
+
+var mystack = stack()
+    .on("activate", activate)
+    .on("deactivate", deactivate);
+
+var section = d3.selectAll("section"),
+    follow = d3.select("#follow"),
+    followAnchor = d3.select("#follow-anchor"),
+    followIndex = section[0].indexOf(follow.node())
+
+function refollow() {
+  followAnchor.style("top", (followIndex + (1 - mystack.scrollRatio()) / 2 - d3.event.offset) * 100 + "%");
+}
+
+function activate(d, i) {
+  if (i === followIndex) mystack.on("scroll.follow", refollow);
+}
+
+function deactivate(d, i) {
+  if (i === followIndex) mystack.on("scroll.follow", null);
+}
+
+</script>
